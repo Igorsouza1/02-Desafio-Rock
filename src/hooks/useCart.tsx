@@ -35,6 +35,12 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
   const addProduct = async (productId: number) => {
     try {
       // TODO
+      const response = await api.post('/product')
+      const { product } = response.data
+      setCart([
+        ...cart,
+        product
+      ])
     } catch {
       // TODO
     }
